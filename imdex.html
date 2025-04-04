@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Streaming</title>
+  <script src="//content.jwplatform.com/libraries/SAHhwvZq.js"></script>
+  <style>
+    body {
+      background-color: #0f172a;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    #playerContainer {
+      margin: 20px auto;
+      max-width: 800px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+    }
+    .btn-container {
+      margin-top: 20px;
+    }
+    .btn {
+      padding: 12px 24px;
+      margin: 10px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .btn-english { background: #3b82f6; color: white; }
+    .btn-bhojpuri { background: #22c55e; color: white; }
+    .btn-haryanvi { background: #ef4444; color: white; }
+    .btn:hover { transform: scale(1.1); }
+  </style>
+</head>
+<body>
+  <div id="playerContainer">
+    <div id="jwplayerDiv"></div>
+  </div>
+
+  <div class="btn-container">
+    <button class="btn btn-english" onclick="changeStream('https://prod-ent-live-gm.jiocinema.com/bpk-tv/JS_M1_IPL25_ENG_IDC_MOB/Fallback/JS_M1_IPL25_ENG_IDC_MOB-audio_75235_eng=75200-video=764800.m3u8')">English</button>
+    <button class="btn btn-bhojpuri" onclick="changeStream('https://prod-ent-live-gm.jiocinema.com/bpk-tv/JS_M1_IPL25_Bhoj_IDC_MOB/Fallback/JS_M1_IPL25_Bhoj_IDC_MOB-audio_75235_bho=75200-video=764800.m3u8')">Bhojpuri</button>
+    <button class="btn btn-haryanvi" onclick="changeStream('https://prod-ent-live-gm.jiocinema.com/bpk-tv/JS_M1_IPL25_HAR_IDC_MOB/Fallback/JS_M1_IPL25_HAR_IDC_MOB-audio_75235_har=75200-video=764800.m3u8')">Haryanvi</button>
+  </div>
+
+  <script>
+    function changeStream(url) {
+      jwplayer("jwplayerDiv").load([{ file: url }]);
+      jwplayer("jwplayerDiv").play();
+    }
+
+    const defaultStream = "https://prod-ent-live-gm.jiocinema.com/bpk-tv/JS_M1_IPL25_ENG_IDC_MOB/Fallback/JS_M1_IPL25_ENG_IDC_MOB-audio_75235_eng=75200-video=764800.m3u8";
+
+    const player = jwplayer("jwplayerDiv").setup({
+      file: defaultStream,
+      autostart: true,
+      controls: true,
+      width: "100%",
+      aspectratio: "16:9"
+    });
+  </script>
+
+  <a href="https://t.me/+jXFxo1HWPlphZTU1" target="_blank" style="
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    padding: 10px;
+    background: #0088cc;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 30px auto;
+  ">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram" width="20" style="margin-right: 10px;">
+    Join Us on Telegram
+  </a>
+</body>
+</html>

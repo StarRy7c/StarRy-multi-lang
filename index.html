@@ -1,5 +1,168 @@
 
-<!--DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Live Channels</title>
+  <script src="//content.jwplatform.com/libraries/SAHhwvZq.js"></script>
+  <style>
+    body {
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    #playerContainer {
+      max-width: 900px;
+      margin: 20px auto;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    }
+
+    .btn-container {
+      margin: 30px 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .btn {
+      padding: 14px 28px;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      font-weight: bold;
+      color: white;
+      background: #2563eb;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+      background: #1d4ed8;
+    }
+
+    /* Popup styling */
+    .popup-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.85);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+      animation: fadeIn 0.6s ease-in-out;
+    }
+
+    .popup-content {
+      background: #1f2937;
+      color: white;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 0 30px red;
+      animation: pulse 1.5s infinite alternate;
+    }
+
+    .popup-content h2 {
+      color: #ff4444;
+    }
+
+    .popup-content a {
+      background: #ff4444;
+      color: white;
+      padding: 12px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      display: inline-block;
+      margin-top: 20px;
+    }
+
+    .popup-content a:hover {
+      background: #cc0000;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 30px;
+      color: white;
+      cursor: pointer;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.1); }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Live News Channels</h1>
+
+  <div id="playerContainer">
+    <div id="jwplayerDiv"></div>
+  </div>
+
+  <div class="btn-container">
+     </div>
+
+  <a href="https://telegram.me/+jXFxo1HWPlphZTU1" target="_blank" style="display: inline-block; margin: 20px auto; padding: 12px 25px; background: #0088cc; color: white; font-weight: bold; border-radius: 25px; text-decoration: none;">
+    Join Us on Telegram
+  </a>
+
+  <!-- Telegram Popup -->
+  <div class="popup-overlay" id="popup">
+    <div class="popup-content">
+      <span class="close-btn" onclick="closePopup()">&times;</span>
+      <h2>Emergency Alert!</h2>
+      <p>Join our Telegram for real-time breaking news</p>
+      <a href="https://telegram.me/+jXFxo1HWPlphZTU1" target="_blank">Join Now</a>
+    </div>
+  </div>
+
+  <script>
+    function switchStream(url) {
+      player.load([{ file: url }]);
+      player.play();
+    }
+
+    const player = jwplayer("jwplayerDiv").setup({
+      file: "https://starsportshindiii.pages.dev/index.m3u8",
+      autostart: true,
+      controls: true,
+      width: "100%",
+      aspectratio: "16:9",
+    });
+
+    function closePopup() {
+      document.getElementById("popup").style.display = "none";
+    }
+  </script>
+
+</body>
+</html><!--DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -52,7 +215,7 @@ Live cricket view using custom iframe
   </iframe>
 
 </body>
-</html--><-html lang="en">
+</html--><!---html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
